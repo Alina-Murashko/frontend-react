@@ -1,0 +1,38 @@
+:root {
+  @font-face {
+    font-family: 'CircleRounded';
+    src:
+      url('../assets/fonts/CirceRounded.eot') format('eot'),
+      url('../assets/fonts/CirceRounded-Light.eot') format('eot'),
+      url('../assets/fonts/CirceRounded-Bold.eot') format('eot'),
+      url('../assets/fonts/CirceRounded.woff') format('woff'),
+      url('../assets/fonts/CirceRounded-Light.woff') format('woof'),
+      url('../assets/fonts/CirceRounded-Bold.woff') format('woff'),
+      url('../assets/fonts/CirceRounded.woff2') format('woff2'),
+      url('../assets/fonts/CirceRounded-Light.woff2') format('woff2'),
+      url('../assets/fonts/CirceRounded-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  --font-family-primary: 'CircleRounded', sans-serif;
+
+  // line heights
+  --line-height-s: 80%;
+  --line-height-m: 130%;
+  --line-height-l: 170%;
+
+  // font sizes
+  --font-size-xs: 10px;
+  --font-size-s: 12px;
+  --font-size-m: 16px;
+  --font-size-l: 24px;
+  --font-size-xl: 32px;
+  --font-size-xxl: 40px;
+  --font-size-l-20: 20px;
+
+  // font weights
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-light: 300;
+}

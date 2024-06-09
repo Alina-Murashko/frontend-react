@@ -1,0 +1,50 @@
+.card {
+  white-space: nowrap;
+  margin: 150px auto 100px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 340px;
+  & .link {
+    text-decoration: underline;
+    color: var(--color--dark-blue);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  margin: 16px auto;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 32px;
+}
+
+.containerInput {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.checkbox {
+  margin: 16px 0 32px;
+}
+
+.linkContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 6px 0 64px;
+}
+
+.registrationContainer {
+  display: grid;
+  gap: 5px;
+  text-align: center;
+}

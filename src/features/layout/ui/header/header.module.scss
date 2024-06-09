@@ -1,0 +1,26 @@
+.container {
+  grid-area: header;
+  position: fixed;
+  z-index: 9999;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1190px;
+  padding: 12px 50px 12px 50px;
+
+  border-bottom: 1px solid var(--color-border-header);
+  border-radius: 0 0 20px 20px;
+
+  box-shadow:
+    0 2px 4px 0 rgba(143, 143, 183, 0.07),
+    0 7px 7px 0 rgba(143, 143, 183, 0.06),
+    0 15px 9px 0 rgba(143, 143, 183, 0.04),
+    0 27px 11px 0 rgba(143, 143, 183, 0.01),
+    0 42px 12px 0 rgba(143, 143, 183, 0);
+  background: var(--color-background-2);
+
+  .name {
+    color: var(--color-dark-violet);
+  }
+}

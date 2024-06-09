@@ -1,0 +1,39 @@
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  border-radius: 12px;
+  padding: 8px;
+  max-width: 190px;
+  width: 100%;
+}
+.active {
+  background-color: var(--color-violet-light);
+}
+
+.out {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: var(--font-size-m);
+  line-height: 135%;
+  text-align: center;
+  color: var(--color--dark-blue);
+
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+}

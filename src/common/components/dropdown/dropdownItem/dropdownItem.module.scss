@@ -1,0 +1,15 @@
+.DropdownMenuItem {
+  cursor: pointer;
+
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  outline: none;
+}
+
+.DropdownMenuItem:not(:first-child):not(:last-child):focus-visible {
+  border-radius: 12px;
+  outline: 2px solid var(--color-dark-violet);
+  outline-offset: 2px;
+}

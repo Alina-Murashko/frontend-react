@@ -1,0 +1,107 @@
+.label {
+  color: var(--color-dark);
+}
+
+.labelDisabled {
+  color: var(--color-dark-grey);
+}
+
+.trigger {
+  cursor: pointer;
+
+  padding: 10px 12px;
+  width: 253px;
+  border: 1px solid var(--color-border-grey);
+  border-radius: 8px;
+  background-color: var(--color-white);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-m);
+  color: var(--color--dark-grey);
+
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  outline: none;
+
+  .icon {
+    fill: var(--color-border-grey);
+    transition: 0.2s;
+  }
+
+  &.small {
+    column-gap: 6px;
+    padding: 0 2px 0 6px;
+    font-size: var(--font-size-s);
+  }
+
+  &:focus-visible:not([data-disabled]) {
+    outline-color: var(--color-dark-violet);
+  }
+
+  &[data-state='open'] {
+    border-color: var(--color-dark-violet);
+    border-radius: 2px 2px 0 0;
+
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover:not([data-disabled]) {
+    cursor: pointer;
+    background-color: var(--color-violet-light);
+  }
+
+  &[data-disabled] {
+    cursor: initial;
+    color: var(--color-border-grey);
+    border-color: var(--color-dark-grey);
+  }
+}
+
+.triggerDisabled {
+  cursor: auto;
+  color: var(--color-border-grey);
+  border-color: var(--color-dark-grey);
+
+  .iconDisabled {
+    color: var(--color-border-grey);
+    fill: var(--color-dark-300, #4c4c4c);
+  }
+}
+
+.content {
+  z-index: 999;
+
+  width: var(--radix-select-trigger-width);
+  border-radius: 8px;
+  background-color: var(--color-violet-light);
+  border: 1px solid var(--color-btn-violet);
+
+  .item {
+    cursor: pointer;
+    padding: 6px 12px;
+    outline: none;
+    transition: 0.2s;
+
+    &.small {
+      padding: 0 6px;
+      font-size: var(--font-size-s);
+    }
+
+    &:hover,
+    &:focus-visible,
+    &[data-state='checked'] {
+      color: var(--color-dark-violet);
+      background-color: var(--color-violet-light);
+    }
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}

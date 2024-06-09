@@ -1,0 +1,42 @@
+.container {
+  position: relative;
+  max-width: 145px;
+  padding: 4px;
+  text-align: left;
+  &:hover {
+    outline: 1px solid var(--color-dark-violet);
+    outline-offset: 2px;
+  }
+}
+
+.success {
+  border: 1px solid var(--color-success);
+  background-color: transparent;
+}
+
+.stroke {
+  background-color: var(--color-lesson-fill);
+  border: 1px solid var(--color-lesson-stroke);
+}
+
+.notAvailable {
+  border: 1px solid var(--color-dark-grey);
+  background-color: transparent;
+  text-decoration: line-through;
+}
+.pay {
+  border: 1px solid var(--color-alert);
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 0;
+}
+
+.link {
+  text-decoration: none;
+  outline: 1px solid var(--color-dark-violet);
+  outline-offset: 2px;
+}

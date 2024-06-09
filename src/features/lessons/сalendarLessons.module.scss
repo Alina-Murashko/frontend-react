@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.settings {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 28px;
+}
+
+.containerLink {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 12px;
+  .buttonLink {
+    margin: 0 16px 0 32px;
+  }
+  .navMenu {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+  .month {
+    font-weight: var(--font-weight-bold);
+  }
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.containerContent {
+  margin-top: 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.day {
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-s);
+  text-align: right;
+  color: var(--color--border);
+}

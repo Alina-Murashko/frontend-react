@@ -1,0 +1,52 @@
+@mixin typography($fontSize, $lineHeight, $fontWeight) {
+  margin: 0;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+}
+
+.body1 {
+  @include typography(var(--font-size-xxl), var(--line-height-s), var(--font-weight-regular));
+}
+
+.body2 {
+  @include typography(var(--font-size-xl), var(--line-height-l), var(--font-weight-regular));
+}
+.body3 {
+  @include typography(var(--font-size-l), var(--line-height-l), var(--font-weight-regular));
+}
+.body4 {
+  @include typography(var(--font-size-l-20), var(--line-height-m), var(--font-weight-regular));
+}
+
+.subtitle1 {
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-regular));
+}
+
+.subtitle2 {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
+}
+
+.subtitle3 {
+  @include typography(var(--font-size-xs), var(--line-height-m), var(--font-weight-light));
+}
+
+.link {
+  cursor: pointer;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  &:focus-visible {
+    border-radius: 2px;
+    outline: 2px solid var(--color--dark-blue);
+    outline-offset: 2px;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.error {
+  @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-regular));
+  color: var(--color-alert);
+}

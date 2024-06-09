@@ -1,0 +1,23 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  border-color: var(--color-white);
+  text-align: right;
+}
+
+.th {
+  color: var(--color-dark-grey);
+  padding: 0 6px;
+  max-width: 153px;
+}
+
+.td {
+  border: 1px solid var(--color-border-grey);
+  padding: 4px;
+  max-width: 153px;
+
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-s);
+  line-height: 100%;
+  text-align: right;
+}

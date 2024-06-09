@@ -1,0 +1,63 @@
+.trigger {
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  &:focus-visible {
+    border-radius: 5px;
+    outline: 2px solid var(--color-dark-violet);
+    outline-offset: 2px;
+  }
+}
+
+.DropdownMenuContent {
+  position: absolute;
+  z-index: 9999999;
+  top: 10px;
+  right: -23.5px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 13px;
+
+  border: 1px solid var(--color-dark-violet);
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 30px;
+  width: 250px;
+
+  animation: scaleIn 0.4s ease-in-out;
+
+  &::before,
+  &::after {
+    content: '';
+
+    position: absolute;
+    right: 15px;
+
+    display: block;
+
+    border: 8px solid transparent;
+  }
+
+  &::before {
+    top: -16px;
+    border-bottom: 8px solid var(--color-dark-violet);
+  }
+
+  &::after {
+    top: -16px;
+    border-bottom: 8px solid var(--color-dark-violet);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
