@@ -6,16 +6,16 @@ import { z } from 'zod'
 
 import s from './formSignIn.module.scss'
 
-import EyeOffOutline from '../../assets/icons/EyeOffOutline'
-import EyeOutline from '../../assets/icons/EyeOutline'
-import logo from '../../assets/logo.png'
-import { Button } from '../../common/components/button/Button'
-import { Card } from '../../common/components/card/Card'
-import { ControlledCheckbox } from '../../common/components/controlled/controlledCheckbox/ControlledCheckbox'
-import { ControlledInput } from '../../common/components/controlled/controlledInput/ControlledInput'
-import { InputType } from '../../common/components/input/Input'
-import { Typography } from '../../common/components/typography/Typography'
-import { emailSchema, passwordSchema } from '../../common/components/utils/zodSchema'
+import EyeOffOutline from '../../../assets/icons/EyeOffOutline'
+import EyeOutline from '../../../assets/icons/EyeOutline'
+import logo from '../../../assets/logo.png'
+import { Button } from '../../../common/components/button/Button'
+import { Card } from '../../../common/components/card/Card'
+import { ControlledCheckbox } from '../../../common/components/controlled/controlledCheckbox/ControlledCheckbox'
+import { ControlledInput } from '../../../common/components/controlled/controlledInput/ControlledInput'
+import { InputType } from '../../../common/components/input/Input'
+import { Typography } from '../../../common/components/typography/Typography'
+import { emailSchema, passwordSchema } from '../../../common/components/utils/zodSchema'
 
 type Props = {
   onSubmit: (data: SignIn) => void

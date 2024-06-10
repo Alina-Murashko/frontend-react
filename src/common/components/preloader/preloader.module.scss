@@ -1,0 +1,16 @@
+.setting {
+  color: var(--color-btn-violet);
+  background-color: transparent;
+  font-size: 50px;
+  font-style: italic;
+  font-weight: 900;
+  height: 50vh;
+  line-height: 2;
+  margin: 70px auto 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

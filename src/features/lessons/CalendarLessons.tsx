@@ -1,15 +1,17 @@
-import { useEffect, useState } from 'react'
+import { ComponentPropsWithoutRef, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 import s from './сalendarLessons.module.scss'
 
+import { appActions } from '../../app/app.reducer'
 import { lessonsActions, lessonsTC } from '../../app/lessons/lessons.reducer'
 import { AppRootStateType } from '../../app/store'
 import Back from '../../assets/icons/Back'
 import Forward from '../../assets/icons/Forward'
 import Qushion from '../../assets/icons/Qushion'
 import { Button } from '../../common/components/button/Button'
+import { Preloader } from '../../common/components/preloader/Preloader'
 import { Select } from '../../common/components/select/Select'
 import { Table, Tbody, Td, Th, Thead, Tr } from '../../common/components/tables/Tables'
 import { Lesson } from '../../common/components/tables/lesson/Lesson'
@@ -24,15 +26,16 @@ const options = [
   { label: 'Английский язык', value: 'english' },
 ]
 
-export const CalendarLessons = () => {
+export const CalendarLessons = (props: ComponentPropsWithoutRef<'div'>) => {
   const lessons = useSelector((state: AppRootStateType) => state.lessons)
   const userId = useSelector((state: AppRootStateType) => state.auth.dataUsers.id)
+  const status = useSelector((state: AppRootStateType) => state.app.status)
   const dispatch = useAppDispatch()
   const [select, setSelect] = useState<string | undefined>(undefined)
   const navigate = useNavigate()
-
+  const isStatus = status === 'loading'
   const handleNavigateBack = (nav: number) => {
-    navigate(-1)
+    navigate(nav)
   }
 
   useEffect(() => {
@@ -40,11 +43,17 @@ export const CalendarLessons = () => {
     // const currentYear = new Date().getFullYear().toString();
 
     //dispatch(lessonsTC({currentMonth, currentYear,select,userId}))
-    dispatch(lessonsActions.setLessons({ lessons: lessonsData }))
+    dispatch(appActions.setAppStatus({ status: 'loading' }))
+    const timeoutId = setTimeout(() => {
+      dispatch(lessonsActions.setLessons({ lessons: lessonsData }))
+      dispatch(appActions.setAppStatus({ status: 'succeeded' }))
+
+      clearTimeout(timeoutId)
+    }, 1000) //задержка 1 секунда как замена ответа с сервера чтобы показать весь flow
   }, [dispatch, lessons, select, userId])
 
   return (
-    <div className={s.container}>
+    <div className={s.container} {...props}>
       <div className={s.settings}>
         <Select onValueChange={setSelect} options={options} placeholder={'Выберите предмет'} />
         <Button as={NavLink} to={'#'} variant={'secondary'}>
@@ -57,7 +66,6 @@ export const CalendarLessons = () => {
             <Back />
           </Typography>
           <Typography className={s.month} variant={'subtitle1'}>
-            {' '}
             Июнь 2024
           </Typography>
           <Typography as={'a'} onClick={() => handleNavigateBack(+1)}>
@@ -71,36 +79,40 @@ export const CalendarLessons = () => {
           <Qushion />
         </NavLink>
       </div>
-      <Table>
-        <Thead>
-          <Tr>
-            {week?.map((day, id) => {
-              return <Th key={id}>{day}</Th>
-            })}
-          </Tr>
-        </Thead>
-        <Tbody>
-          {weeksInMonth?.map((week: (Date | undefined)[], id) => {
-            return (
-              <Tr key={id}>
-                {week.map((day, id) => {
-                  const dayLessons = day?.getDate() ?? ''
-                  const dataLessons = lessons[dayLessons]
+      {isStatus ? (
+        <Preloader />
+      ) : (
+        <Table>
+          <Thead>
+            <Tr>
+              {week?.map((day, id) => {
+                return <Th key={id}>{day}</Th>
+              })}
+            </Tr>
+          </Thead>
+          <Tbody>
+            {weeksInMonth?.map((week: (Date | undefined)[], id) => {
+              return (
+                <Tr key={id}>
+                  {week.map((day, id) => {
+                    const dayLessons = day?.getDate() ?? ''
+                    const dataLessons = lessons[dayLessons]
 
-                  return (
-                    <Td key={id}>
-                      <span className={s.day}>{day?.getDate()}</span>
-                      <div className={s.containerContent}>
-                        {dataLessons?.map(lesson => <Lesson data={lesson} key={lesson.id} />)}
-                      </div>
-                    </Td>
-                  )
-                })}
-              </Tr>
-            )
-          })}
-        </Tbody>
-      </Table>
+                    return (
+                      <Td key={id}>
+                        <span className={s.day}>{day?.getDate()}</span>
+                        <div className={s.containerContent}>
+                          {dataLessons?.map(lesson => <Lesson data={lesson} key={lesson.id} />)}
+                        </div>
+                      </Td>
+                    )
+                  })}
+                </Tr>
+              )
+            })}
+          </Tbody>
+        </Table>
+      )}
     </div>
   )
 }

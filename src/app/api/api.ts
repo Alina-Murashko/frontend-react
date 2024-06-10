@@ -1,12 +1,11 @@
 import axios from 'axios'
 
-import { SignIn } from '../../features/signIn/FormSignIn'
+import { SignIn } from '../../features/signIn/ui/FormSignIn'
 
 const settings = {
   headers: {
     'API-KEY': '',
   },
-  withCredentials: true,
 }
 const instance = axios.create({
   baseURL: '',
@@ -16,13 +15,13 @@ const instance = axios.create({
 // api
 export const lessonsAPI = {
   getLessons(data: RequestLessons) {
-    return instance.post<Lessons>('lessons', data)
+    return instance.post<ResponseType<Lessons>>('lessons', data)
   },
 }
 
 export const authAPI = {
-  accountTypeChange(type: AccountType) {
-    return instance.patch<AccountType>('auth/accountType', type)
+  accountTypeChange(type: AccountTypeRequest) {
+    return instance.patch<ResponseType<AccountType>>('auth/accountType', type)
   },
   login(data: SignIn) {
     return instance.post<ResponseType<ResponseUser>>('auth/login', data)
@@ -70,4 +69,8 @@ export type RequestLessons = {
   currentYear: string
   select: string
   userId: string
+}
+
+type AccountTypeRequest = {
+  type: AccountType
 }

@@ -34,11 +34,11 @@ export const Timer = ({ date }: PropsType) => {
 
   return (
     <Typography className={s.container} variant={'body1'}>
-      {diffDays}
+      {diffDays.toString()}
       <span>д</span>
-      {diffH.toString()}
+      {diffH.toString().padStart(0)}
       <span>ч</span>
-      {diffM.toString()}
+      {diffM.toString().padStart(0)}
       <span>мин</span>
     </Typography>
   )

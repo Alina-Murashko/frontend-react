@@ -1,3 +1,4 @@
+import { ComponentPropsWithoutRef } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate, Outlet } from 'react-router-dom'
 
@@ -7,7 +8,7 @@ import { AppRootStateType } from '../../app/store'
 import { Header } from './ui/header/Header'
 import { Menu } from './ui/menu/Menu'
 
-export const Layout = () => {
+export const Layout = (props: ComponentPropsWithoutRef<'div'>) => {
   const isLoggedIn = useSelector((state: AppRootStateType) => state.auth.isLoggedIn)
 
   if (!isLoggedIn) {
@@ -15,7 +16,7 @@ export const Layout = () => {
   }
 
   return (
-    <div className={s.container}>
+    <div className={s.container} {...props}>
       <Header />
       <Menu />
       <main className={s.main}>

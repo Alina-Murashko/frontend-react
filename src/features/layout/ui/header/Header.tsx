@@ -6,7 +6,9 @@ import classNames from 'classnames'
 import s from './header.module.scss'
 
 import { AccountType } from '../../../../app/api/api'
-import { authActions, logoutTC } from '../../../../app/auth/auth.reducer'
+import { appActions } from '../../../../app/app.reducer'
+import { authActions, authThunk } from '../../../../app/auth/auth.reducer'
+import { lessonsActions } from '../../../../app/lessons/lessons.reducer'
 import { AppRootStateType } from '../../../../app/store'
 import UserDropdown from '../../../../common/components/dropdown/userDropdown/UserDropdown'
 import { Typography } from '../../../../common/components/typography/Typography'
@@ -18,14 +20,27 @@ export const Header = forwardRef<ElementRef<'header'>, ComponentPropsWithoutRef<
     const dispatch = useAppDispatch()
     const dataUserName = useSelector((state: AppRootStateType) => state.auth.dataUsers.name)
     const accountType = useSelector((state: AppRootStateType) => state.auth.dataUsers.accountType)
+    const isAccountType = accountType === 'parent'
     const logOut = () => {
-      //dispatch(logoutTC())
-      dispatch(authActions.setIsLoggedIn({ isLoggedIn: false }))
-      dispatch(authActions.setChangeTypeAccount({ accountType: 'idle' }))
+      //dispatch(authThunk.logout())
+      dispatch(appActions.setAppStatus({ status: 'loading' }))
+      const timeoutId = setTimeout(() => {
+        dispatch(authActions.setIsLoggedIn({ isLoggedIn: false }))
+        dispatch(authActions.setChangeTypeAccount({ accountType: 'idle' }))
+        dispatch(appActions.setAppStatus({ status: 'succeeded' }))
+        dispatch(lessonsActions.setLessons({ lessons: {} }))
+        clearTimeout(timeoutId)
+      }, 1000) // задержка в 1 секунду как замена ответа с сервера чтобы показать весь flow
     }
     const onChangeProfile = (type: AccountType) => {
       // dispatch(accountTypeChangeTC(type))
-      dispatch(authActions.setChangeTypeAccount({ accountType: type }))
+      dispatch(appActions.setAppStatus({ status: 'loading' }))
+      const timeoutId = setTimeout(() => {
+        dispatch(authActions.setChangeTypeAccount({ accountType: type }))
+        dispatch(appActions.setAppStatus({ status: 'succeeded' }))
+
+        clearTimeout(timeoutId)
+      }, 1000) // задержка в 1 секунду как замена ответа с сервера чтобы показать весь flow
     }
 
     return (
@@ -33,7 +48,7 @@ export const Header = forwardRef<ElementRef<'header'>, ComponentPropsWithoutRef<
         <Typography variant={'body3'}>
           Добро пожаловать,{' '}
           <span className={s.name}>
-            {accountType === 'parent' ? dataUserName.parent : dataUserName.children}
+            {isAccountType ? dataUserName.parent : dataUserName.children}
           </span>
           !
         </Typography>

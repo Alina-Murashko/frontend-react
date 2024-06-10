@@ -26,12 +26,12 @@
   background-color: var(--color-dark-violet);
   color: var(--color-white);
 
-  .title {
+  .cardOffer__title {
     max-width: 400px;
     width: 100%;
     line-height: 100%;
   }
-  .text {
+  .cardOffer__text {
     max-width: 310px;
     width: 100%;
     font-weight: var(--font-weight-light);
@@ -48,13 +48,14 @@
   padding: 32px 0;
   max-width: 344px;
   width: 100%;
-  .button {
+  .cardTimer__button {
     border: 1px dashed var(--color-dark);
     border-radius: 30px;
     padding: 10px 70px;
     background-color: transparent;
   }
-  .text {
+  .cardTimer__text {
+    text-align: center;
     max-width: 220px;
   }
 }
@@ -68,6 +69,9 @@
   max-width: 344px;
   width: 100%;
 
+  max-height: 372px;
+  height: 100%;
+
   align-items: flex-start;
 
   white-space: nowrap;
@@ -77,6 +81,11 @@
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 300px;
+  }
+
+  .buttonTable {
+    align-self: center;
+    margin-top: 36px;
   }
   & th,
   td {
@@ -122,7 +131,7 @@
 .cardLessons {
   max-width: 100%;
   width: 100%;
-  .text {
+  .cardLessons__text {
     font-weight: var(--font-weight-light);
   }
   & th,
@@ -162,11 +171,6 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-violet);
-}
-
-.buttonTable {
-  align-self: center;
-  margin-top: 36px;
 }
 
 .dataTable {
