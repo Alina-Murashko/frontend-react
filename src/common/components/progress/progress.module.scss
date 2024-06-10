@@ -1,7 +1,7 @@
 .progressRoot {
   position: relative;
   overflow: hidden;
-
+  z-index: 99999999;
   background-color: var(--color-violet);
   border-radius: 99999px;
   width: 100%;

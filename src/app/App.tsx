@@ -35,6 +35,7 @@ export function App() {
 
   return (
     <div>
+      { isStatus &&  <ProgressDemo/>}
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />} path={'/'}>
@@ -47,7 +48,6 @@ export function App() {
             <Route element={<div></div>} path={'queshion'} />
             <Route element={<div></div>} path={'achievements'} />
             <Route element={<div></div>} path={'setting'} />
-            <Route element={<div></div>} path={'queshion'} />
           </Route>
           <Route element={<SignInPage />} path={'SignIn'} />
           <Route element={<Navigate replace to={'/'} />} path={'*'} />
