@@ -15,7 +15,7 @@ import { ControlledCheckbox } from '../../../common/components/controlled/contro
 import { ControlledInput } from '../../../common/components/controlled/controlledInput/ControlledInput'
 import { InputType } from '../../../common/components/input/Input'
 import { Typography } from '../../../common/components/typography/Typography'
-import { emailSchema, passwordSchema } from '../../../common/components/utils/zodSchema'
+import { emailSchema, passwordSchema } from '../../../common/utils/zodSchema'
 
 type Props = {
   onSubmit: (data: SignIn) => void
