@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend-react/static/css/main.d55722bc.css",
-    "main.js": "/frontend-react/static/js/main.f417d3f6.js",
+    "main.css": "/frontend-react/static/css/main.59a640ed.css",
+    "main.js": "/frontend-react/static/js/main.508225f1.js",
     "static/media/CirceRounded-Bold.eot": "/frontend-react/static/media/CirceRounded-Bold.eba75b963e809469172a.eot",
     "static/media/CirceRounded-Light.eot": "/frontend-react/static/media/CirceRounded-Light.ced04c4e961e4c24f03e.eot",
     "static/media/CirceRounded.eot": "/frontend-react/static/media/CirceRounded.650463298e93ba803aaf.eot",
@@ -14,11 +14,11 @@
     "static/media/gift.png": "/frontend-react/static/media/gift.d7a91296bb5964b69aab.png",
     "static/media/preloader.svg": "/frontend-react/static/media/preloader.fca1473a7c90a7dd754c74b5edd69565.svg",
     "index.html": "/frontend-react/index.html",
-    "main.d55722bc.css.map": "/frontend-react/static/css/main.d55722bc.css.map",
-    "main.f417d3f6.js.map": "/frontend-react/static/js/main.f417d3f6.js.map"
+    "main.59a640ed.css.map": "/frontend-react/static/css/main.59a640ed.css.map",
+    "main.508225f1.js.map": "/frontend-react/static/js/main.508225f1.js.map"
   },
   "entrypoints": [
-    "static/css/main.d55722bc.css",
-    "static/js/main.f417d3f6.js"
+    "static/css/main.59a640ed.css",
+    "static/js/main.508225f1.js"
   ]
 }
