@@ -1,7 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 const initialState = {
   error: null as null | string,
-  isInitialized: false,
   status: 'idle' as RequestStatusType,
 }
 

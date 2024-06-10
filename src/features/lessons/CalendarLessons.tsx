@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import s from './сalendarLessons.module.scss'
 
 import { appActions } from '../../app/app.reducer'
-import { lessonsActions, lessonsTC } from '../../app/lessons/lessons.reducer'
+import { lessonsActions, lessonsThunks } from '../../app/lessons/lessons.reducer'
 import { AppRootStateType } from '../../app/store'
 import Back from '../../assets/icons/Back'
 import Forward from '../../assets/icons/Forward'
@@ -42,14 +42,14 @@ export const CalendarLessons = (props: ComponentPropsWithoutRef<'div'>) => {
     // const currentMonth = new Date().getMonth().toString();
     // const currentYear = new Date().getFullYear().toString();
 
-    //dispatch(lessonsTC({currentMonth, currentYear,select,userId}))
+    //dispatch(lessonsThunks.lessons({currentMonth, currentYear,select,userId}))
     dispatch(appActions.setAppStatus({ status: 'loading' }))
     const timeoutId = setTimeout(() => {
       dispatch(lessonsActions.setLessons({ lessons: lessonsData }))
       dispatch(appActions.setAppStatus({ status: 'succeeded' }))
 
-      clearTimeout(timeoutId)
     }, 1000) //задержка 1 секунда как замена ответа с сервера чтобы показать весь flow
+        return () => clearTimeout(timeoutId)
   }, [dispatch, lessons, select, userId])
 
   return (
