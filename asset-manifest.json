@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/frontend-react/static/css/main.d55722bc.css",
+    "main.js": "/frontend-react/static/js/main.f417d3f6.js",
+    "static/media/CirceRounded-Bold.eot": "/frontend-react/static/media/CirceRounded-Bold.eba75b963e809469172a.eot",
+    "static/media/CirceRounded-Light.eot": "/frontend-react/static/media/CirceRounded-Light.ced04c4e961e4c24f03e.eot",
+    "static/media/CirceRounded.eot": "/frontend-react/static/media/CirceRounded.650463298e93ba803aaf.eot",
+    "static/media/CirceRounded-Light.woff": "/frontend-react/static/media/CirceRounded-Light.356a97c2929fedb7892c.woff",
+    "static/media/CirceRounded.woff": "/frontend-react/static/media/CirceRounded.df10f0aa0415bd7b84b5.woff",
+    "static/media/CirceRounded-Bold.woff": "/frontend-react/static/media/CirceRounded-Bold.694cce166ea954dc0359.woff",
+    "static/media/CirceRounded-Light.woff2": "/frontend-react/static/media/CirceRounded-Light.04384500f7d2a2b3c4ef.woff2",
+    "static/media/CirceRounded.woff2": "/frontend-react/static/media/CirceRounded.f010c3262ccb14c97575.woff2",
+    "static/media/CirceRounded-Bold.woff2": "/frontend-react/static/media/CirceRounded-Bold.d8ad91a2f1c344fd49ef.woff2",
+    "static/media/gift.png": "/frontend-react/static/media/gift.d7a91296bb5964b69aab.png",
+    "static/media/preloader.svg": "/frontend-react/static/media/preloader.fca1473a7c90a7dd754c74b5edd69565.svg",
+    "index.html": "/frontend-react/index.html",
+    "main.d55722bc.css.map": "/frontend-react/static/css/main.d55722bc.css.map",
+    "main.f417d3f6.js.map": "/frontend-react/static/js/main.f417d3f6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d55722bc.css",
+    "static/js/main.f417d3f6.js"
+  ]
+}
