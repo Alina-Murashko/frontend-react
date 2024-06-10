@@ -23,8 +23,7 @@ import { useAppDispatch } from '../../common/hooks/useAppDispatch'
 const options = [
   { label: 'Ментальная арифметика', value: 'mentalArithmetic' },
   { label: 'Шахматы', value: 'chess' },
-  { label: 'Английский язык', value: 'english' },
-]
+  { label: 'Английский язык', value: 'english' }]
 
 export const CalendarLessons = (props: ComponentPropsWithoutRef<'div'>) => {
   const lessons = useSelector((state: AppRootStateType) => state.lessons)
