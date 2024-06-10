@@ -1,6 +1,7 @@
 .table {
   border-collapse: collapse;
   width: 100%;
+  max-width: 1072px;;
   border-color: var(--color-white);
   text-align: right;
 }
@@ -9,6 +10,7 @@
   color: var(--color-dark-grey);
   padding: 0 6px;
   max-width: 153px;
+  max-height: 100px;
 }
 
 .td {

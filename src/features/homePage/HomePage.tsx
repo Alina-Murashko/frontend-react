@@ -24,21 +24,21 @@ export const HomePage = () => {
     <section className={s.gridContainer}>
       <div className={s.flexContainer}>
         <Card className={s.cardOffer}>
-          <Typography className={s.cardOffer__title} variant={'body2'}>
+          <Typography className={s.titleOffer} variant={'body2'}>
             До 31 декабря любой курс со скидкой 20%
           </Typography>
-          <Typography className={s.cardOffer__text} variant={'subtitle1'}>
+          <Typography className={s.textOffer} variant={'subtitle1'}>
             До конца года у вас есть уникальная возможность воспользоваться нашей новогодней скидкой
             20% на любой курс!
           </Typography>
           <img alt={''} className={s.img} src={image} />
         </Card>
         <Card className={s.cardTimer}>
-          <Typography className={s.cardTimer__text} variant={'body4'}>
+          <Typography className={s.cardTimerText} variant={'body4'}>
             Следующее занятие начнется через:
           </Typography>
           <Timer date={finishDate} />
-          <Button as={NavLink} className={s.cardTimer__button} to={'#'} variant={'secondary'}>
+          <Button as={NavLink} className={s.cardTimerButton} to={'#'} variant={'secondary'}>
             Button
           </Button>
         </Card>
@@ -46,7 +46,7 @@ export const HomePage = () => {
       <div className={s.flexContainer}>
         <Card className={s.cardTable}>
           <Typography variant={'body3'}>Баланс занятий </Typography>
-          <div>
+          <div className={s.tableWrapper}>
             <Table>
               <Thead>
                 {lessonsBalance.map((lesson, id) => {
@@ -72,7 +72,7 @@ export const HomePage = () => {
         </Card>
         <Card className={classNames(s.cardTable, s.cardLessons)}>
           <Typography variant={'body3'}>Ближайшие уроки</Typography>
-          <div>
+          <div className={s.tableWrapper}>
             <Table>
               {lessonsRecord.map((lesson, id) => {
                 return (
@@ -92,13 +92,13 @@ export const HomePage = () => {
                     <Td>
                       <NavLink className={s.avatar} to={'#'}>
                         <Profile />
-                        <Typography className={s.cardLessons__text} variant={'subtitle2'}>
+                        <Typography className={s.cardLessonsText} variant={'subtitle2'}>
                           {lesson.teacher}
                         </Typography>
                       </NavLink>
                     </Td>
                     <Td>
-                      <div className={s.containerButton}>
+                      <div className={s.containerButtonTable}>
                         <Button className={s.button} variant={'transparent'}>
                           Button
                         </Button>

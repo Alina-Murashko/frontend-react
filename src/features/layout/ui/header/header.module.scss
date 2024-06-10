@@ -1,8 +1,9 @@
 .container {
-  grid-area: header;
   position: fixed;
   z-index: 9999;
   right: 0;
+  top: 0;
+
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -23,4 +24,27 @@
   .name {
     color: var(--color-dark-violet);
   }
+}
+
+.messages {
+  width: 42px;
+  height: 42px;
+  position: relative;
+  border-radius: 100%;
+  border: 1px solid var(--color-dark-violet);
+
+  svg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.containerInteractive {
+  display: flex;
+  gap: 5px;
 }

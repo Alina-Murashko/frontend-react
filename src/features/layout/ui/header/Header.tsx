@@ -13,6 +13,8 @@ import { AppRootStateType } from '../../../../app/store'
 import UserDropdown from '../../../../common/components/dropdown/userDropdown/UserDropdown'
 import { Typography } from '../../../../common/components/typography/Typography'
 import { useAppDispatch } from '../../../../common/hooks/useAppDispatch'
+import Messages from "../../../../assets/icons/Messages";
+import {Button} from "../../../../common/components/button/Button";
 
 export const Header = forwardRef<ElementRef<'header'>, ComponentPropsWithoutRef<'header'>>(
   (props, ref) => {
@@ -50,9 +52,13 @@ export const Header = forwardRef<ElementRef<'header'>, ComponentPropsWithoutRef<
           <span className={s.name}>
             {isAccountType ? dataUserName.parent : dataUserName.children}
           </span>
-          !
-        </Typography>
-        <UserDropdown accountTypeChange={onChangeProfile} onSelectLogOut={logOut} />
+          !</Typography>
+          <div className={s.containerInteractive}>
+              <div className={s.messages}>
+                  <Messages/>
+              </div>
+              <UserDropdown accountTypeChange={onChangeProfile} onSelectLogOut={logOut}/>
+          </div>
       </header>
     )
   }

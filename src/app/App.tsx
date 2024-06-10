@@ -35,7 +35,6 @@ export function App() {
 
   return (
     <div>
-      {isStatus && <ProgressDemo />}
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />} path={'/'}>
